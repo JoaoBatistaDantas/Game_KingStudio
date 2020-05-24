@@ -49,7 +49,7 @@ layer = -1
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1.58667, -33.3201 )
+position = Vector2( 153.164, -192.266 )
 scale = Vector2( 1.10174, 0.808727 )
 texture = ExtResource( 16 )
 centered = false
@@ -58,7 +58,7 @@ centered = false
 z_index = 2
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 0, -32 )
+position = Vector2( 26.3154, 63.7885 )
 scale = Vector2( 1.10345, 0.807062 )
 z_index = -1
 z_as_relative = false
@@ -68,7 +68,7 @@ centered = false
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 0.0291748, 1.96936 )
+position = Vector2( 544.234, -145.398 )
 scale = Vector2( 1.10342, 0.764225 )
 texture = ExtResource( 19 )
 centered = false
@@ -90,6 +90,7 @@ centered = false
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 294.734, -54.7363 )
 scale = Vector2( 1.10345, 0.766709 )
 texture = ExtResource( 8 )
 centered = false
@@ -104,6 +105,7 @@ centered = false
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2( 332.628, -126.315 )
 scale = Vector2( 1.10345, 0.766709 )
 texture = ExtResource( 17 )
 centered = false
@@ -111,6 +113,7 @@ centered = false
 [node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer9"]
+position = Vector2( 311.576, -177.893 )
 scale = Vector2( 1.10345, 0.766709 )
 texture = ExtResource( 19 )
 centered = false
@@ -118,6 +121,7 @@ centered = false
 [node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer10"]
+position = Vector2( 53.6837, 176.84 )
 scale = Vector2( 1.10345, 0.766709 )
 texture = ExtResource( 7 )
 centered = false
@@ -125,6 +129,7 @@ centered = false
 [node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer11"]
+position = Vector2( 144.209, 175.788 )
 scale = Vector2( 1.10345, 0.766709 )
 texture = ExtResource( 1 )
 centered = false
