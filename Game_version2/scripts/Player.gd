@@ -16,15 +16,14 @@ var jumpFallForce = 70
 var canClimbing = false
 var isClimbing = false
 var moveVector = Vector2()
-var justTimeInJump = true
 var dashCount = 0
 # Inicialização de variáveis
-func _ready():
-	pass
-	
+
 func _physics_process(_delta):
 	gravityProcess()
-	moveProcess()
+	jump()
+	move()
+	dash()
 	on_ground()
 	moveVector = move_and_slide(moveVector, up)
 	
@@ -36,10 +35,6 @@ func gravityProcess():
 	if moveVector.y > maxFallSpeed:
 		moveVector.y = maxFallSpeed
 	
-func moveProcess():
-		jump()
-		move()
-		dash()
 	
 	
 	 
@@ -47,28 +42,23 @@ func on_ground():
 	if is_on_floor():
 		canJump = true
 		isJumping = false
-		justTimeInJump = true
+	else:
+		$justTimeinJump.start()
 
 func dash():
-	if canDash and Input.is_action_just_pressed("ui_right"):
-		moveVector.x = 4 * walkSpeed 
-		canDash = false
-	elif canDash and Input.is_action_just_pressed("ui_left"):
-		moveVector.x = 4 * -walkSpeed 
-		canDash = false
+	if canDash and Input.is_action_just_pressed("dash"):
+		moveVector.x *= 10
+		$CantDashTimer.start()
 		
 func move():
 	if Input.is_action_pressed("ui_right"):
-		
 		moveVector.x = walkSpeed 
 		canDash = true
-		$CantDashTimer.start()
 		$playerSprite.play('walk')
 		$playerSprite.flip_h = false
 	elif Input.is_action_pressed("ui_left"):
 		moveVector.x = -walkSpeed 
 		canDash = true
-		$CantDashTimer.start()
 		$playerSprite.play('walk')
 		$playerSprite.flip_h = true
 	else:
@@ -76,16 +66,19 @@ func move():
 		$playerSprite.play('idle')
 
 func jump():
-	if Input.is_action_just_pressed("ui_up") and ((is_on_floor() or justTimeInJump)):
+	if Input.is_action_just_pressed("ui_up") and ((is_on_floor() or canJump)):
 		isJumping = true
 		canJump = false
-		justTimeInJump = false
 		moveVector.y = jumpForce
 		$playerSprite.play('jump')
-		
-		
+		$justTimeinJump.start()
+
 	if Input.is_action_just_released('ui_up'):
 		moveVector.y = jumpFallForce
 		
 func _on_CantDashTimer_timeout(): # sinal emitido pelo CantDashTimer
 	canDash = false
+
+
+func _on_justTimeinJump_timeout(): # sinal emitido pelo justTimeinJump
+	canJump = false

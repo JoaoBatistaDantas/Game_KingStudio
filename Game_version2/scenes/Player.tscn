@@ -119,6 +119,7 @@ position = Vector2( -2.93948, -0.020288 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 22 )
 animation = "jump"
+frame = 1
 speed_scale = 1.5
 playing = true
 offset = Vector2( -10, 0 )
@@ -131,11 +132,11 @@ wait_time = 0.3
 one_shot = true
 
 [node name="justTimeinJump" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.2
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -5.84782, 7.30977 )
 shape = SubResource( 23 )
 [connection signal="timeout" from="CantDashTimer" to="." method="_on_CantDashTimer_timeout"]
-[connection signal="timeout" from="justTimeinJump" to="." method="_on_CantDashTimer_timeout"]
+[connection signal="timeout" from="justTimeinJump" to="." method="_on_justTimeinJump_timeout"]
